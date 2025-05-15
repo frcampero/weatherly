@@ -48,7 +48,7 @@ npm run dev
 ## 🌍 Deploy
 
 Este proyecto está desplegado en:  
-👉 [https://climahoy.vercel.app](https://climahoy.vercel.app)
+👉 [[https://climahoy.vercel.app](https://climahoyapp.vercel.app/)]
 
 ---
 
