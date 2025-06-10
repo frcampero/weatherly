@@ -10,7 +10,7 @@ const Layout = ({children}: PropsWithChildren) => {
         </main>
         <footer className='border-t backdrop-blur py-12 supports-[backdrop-filter]:bg-background/60'>
             <div className='container mx-auto px-4 text-center text-gray-400'>
-                <p>©Hecho por Federico Campero. Todos los derechos reservados.</p>
+                <p>© Made by Federico Campero. All rights reserved.</p>
             </div>
         </footer>
         </div>

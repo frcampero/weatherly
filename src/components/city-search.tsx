@@ -50,7 +50,7 @@ export function CitySearch() {
         onClick={() => setOpen(true)}
       >
         <Search className="mr-2 h-4 w-4" />
-        Buscar ciudades...
+        Search cities...
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <Command>
@@ -61,7 +61,7 @@ export function CitySearch() {
           />
           <CommandList>
             {query.length > 2 && !isLoading && (
-              <CommandEmpty>Ciudad no encontrada.</CommandEmpty>
+              <CommandEmpty>City not found.</CommandEmpty>
             )}
 
             {/* Favorites Section */}
@@ -72,6 +72,7 @@ export function CitySearch() {
                     key={city.id}
                     value={`${city.lat}|${city.lon}|${city.name}|${city.country}`}
                     onSelect={handleSelect}
+                    className="cursor-pointer"
                   >
                     <Star className="mr-2 h-4 w-4 text-yellow-500" />
                     <span>{city.name}</span>
@@ -95,15 +96,16 @@ export function CitySearch() {
                 <CommandGroup>
                   <div className="flex items-center justify-between px-2 my-2">
                     <p className="text-xs text-muted-foreground">
-                      Busquedas recientes
+                      Recent searches
                     </p>
                     <Button
                       variant="ghost"
                       size="sm"
                       onClick={() => clearHistory.mutate()}
+                      className="cursor-pointer"
                     >
-                      <XCircle className="h-4 w-4" />
-                      Limpiar
+                      <XCircle className="h-4 w-4 cursor-pointer" />
+                      Clean
                     </Button>
                   </div>
                   {history.map((item) => (
@@ -111,6 +113,7 @@ export function CitySearch() {
                       key={item.id}
                       value={`${item.lat}|${item.lon}|${item.name}|${item.country}`}
                       onSelect={handleSelect}
+                      className="cursor-pointer"
                     >
                       <Clock className="mr-2 h-4 w-4 text-muted-foreground" />
                       <span>{item.name}</span>
@@ -134,7 +137,7 @@ export function CitySearch() {
             {/* Search Results */}
             <CommandSeparator />
             {locations && locations.length > 0 && (
-              <CommandGroup heading="Sugerencias">
+              <CommandGroup heading="Suggestions">
                 {isLoading && (
                   <div className="flex items-center justify-center p-4">
                     <Loader2 className="h-4 w-4 animate-spin" />
@@ -145,6 +148,7 @@ export function CitySearch() {
                     key={`${location.lat}-${location.lon}`}
                     value={`${location.lat}|${location.lon}|${location.name}|${location.country}`}
                     onSelect={handleSelect}
+                    className="cursor-pointer"
                   >
                     <Search className="mr-2 h-4 w-4" />
                     <span>{location.name}</span>

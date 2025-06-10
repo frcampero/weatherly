@@ -24,7 +24,7 @@ const CityPage = () => {
       <Alert variant="destructive">
         <AlertTitle>Error</AlertTitle>
         <AlertDescription className="flex flex-col gap-4">
-          Error al cargar la informacion del clima.
+          Error loading weather information
         </AlertDescription>
       </Alert>
     );

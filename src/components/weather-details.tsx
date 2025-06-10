@@ -23,25 +23,25 @@ const WeatherDetails = ({ data }: WeatherDetailsProps) => {
   };
   const details = [
     {
-      title: "Amanecer",
+      title: "Sunrise",
       value: formatTime(sys.sunrise),
       icon: Sunrise,
       color: "text-orange-500",
     },
     {
-      title: "Atardecer",
+      title: "Sunset",
       value: formatTime(sys.sunset),
       icon: Sunset,
       color: "text-blue-500",
     },
     {
-      title: "Dirección del Viento",
+      title: "Wind direction",
       value: `${getWindDirection(wind.deg)} (${wind.deg}°)`,
       icon: Compass,
       color: "text-green-500",
     },
     {
-      title: "Presión",
+      title: "Pressure",
       value: `${main.pressure} hPa`,
       icon: Gauge,
       color: "text-purple-500",
@@ -51,7 +51,7 @@ const WeatherDetails = ({ data }: WeatherDetailsProps) => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Detalles del Clima</CardTitle>
+        <CardTitle>Weather details</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="grid gap-6 sm:grid-cols-2">

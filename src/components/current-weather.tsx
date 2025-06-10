@@ -9,26 +9,12 @@ interface CurrentWeatherProps {
 
 const formatTemp = (temp: number) => `${Math.round(temp)}°`;
 
-const weatherDescriptions = {
-  "clear sky": "Cielo despejado",
-  "few clouds": "Pocas nubes",
-  "scattered clouds": "Nubes dispersas",
-  "broken clouds": "Nubes rotas",
-  "shower rain": "Chubasco",
-  "rain": "Lluvia",
-  "thunderstorm": "Tormenta",
-  "snow": "Nieve",
-  "mist": "Niebla",
-};
-
 const CurrentWeather = ({ data, locationName }: CurrentWeatherProps) => {
   const {
     weather: [currentWeather],
     main: { temp, feels_like, temp_min, temp_max, humidity },
     wind: { speed },
   } = data;
-
-  const translatedDescription = weatherDescriptions[currentWeather.description as keyof typeof weatherDescriptions] || currentWeather.description;
 
   return (
     <Card className="overflow-hidden">
@@ -57,7 +43,7 @@ const CurrentWeather = ({ data, locationName }: CurrentWeatherProps) => {
               </p>
               <div className="space-y-1">
                 <p className="text-sm font-medium text-muted-foreground">
-                  Sensación Térmica {formatTemp(feels_like)}
+                  Feels like {formatTemp(feels_like)}
                 </p>
                 <div className="flex gap-2 text-sm font-medium">
                   <span className="flex items-center gap-1 text-blue-500">
@@ -71,23 +57,25 @@ const CurrentWeather = ({ data, locationName }: CurrentWeatherProps) => {
                 </div>
               </div>
             </div>
+
             <div className="grid grid-cols-2 gap-4">
               <div className="flex items-center gap-2">
                 <Droplets className="h-4 w-4 text-blue-500" />
                 <div className="space-y-0.5">
-                  <p className="text-sm font-medium">Humedad</p>
+                  <p className="text-sm font-medium">Humidity</p>
                   <p className="text-sm text-muted-foreground">{humidity}%</p>
                 </div>
               </div>
               <div className="flex items-center gap-2">
                 <Wind className="h-4 w-4 text-blue-500" />
                 <div className="space-y-0.5">
-                  <p className="text-sm font-medium">Velocidad viento</p>
+                  <p className="text-sm font-medium">Wind speed</p>
                   <p className="text-sm text-muted-foreground">{speed}m/s</p>
                 </div>
               </div>
             </div>
           </div>
+
           <div className="flex flex-col items-center justify-center">
             <div className="relative flex aspect-square w-full max-w-[200px] items-center justify-center">
               <img
@@ -97,7 +85,7 @@ const CurrentWeather = ({ data, locationName }: CurrentWeatherProps) => {
               />
               <div className="absolute bottom-0 text-center">
                 <p className="text-sm font-medium capitalize">
-                  {translatedDescription}
+                  {currentWeather.description}
                 </p>
               </div>
             </div>

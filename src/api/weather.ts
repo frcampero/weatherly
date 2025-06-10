@@ -31,7 +31,7 @@ class WeatherAPI {
       lat: lat.toString(),
       lon: lon.toString(),
       units: API_CONFIG.DEFAULT_PARAMS.units,
-      lang: "es",
+      lang: "en",
     });
 
     return this.fetchData<WeatherData>(url);
@@ -42,7 +42,7 @@ class WeatherAPI {
       lat: lat.toString(),
       lon: lon.toString(),
       units: API_CONFIG.DEFAULT_PARAMS.units,
-      lang: "es",
+      lang: "en",
     });
 
     return this.fetchData<ForecastData>(url);

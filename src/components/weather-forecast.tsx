@@ -2,7 +2,7 @@ import type { ForecastData } from "@/api/types";
 import { format } from "date-fns";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { ArrowDown, ArrowUp, Droplets, Wind } from "lucide-react";
-import { es } from "date-fns/locale"; // Importar el locale en español
+import { es } from "date-fns/locale"; 
 
 interface WeatherForecastProps {
   data: ForecastData;
@@ -49,7 +49,7 @@ const WeatherForecast = ({ data }: WeatherForecastProps) => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Pronóstico de 5 días</CardTitle>
+        <CardTitle>5-Day Forecast</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="grid gap-4">

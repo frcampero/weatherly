@@ -45,12 +45,12 @@ export function WeatherDashboard() {
     return (
       <Alert variant="destructive">
         <AlertTriangle className="h-4 w-4" />
-        <AlertTitle>Error de ubicación.</AlertTitle>
+        <AlertTitle>Location error</AlertTitle>
         <AlertDescription className="flex flex-col gap-4">
           <p>{locationError}</p>
           <Button variant="outline" onClick={getLocation} className="w-fit">
             <MapPin className="mr-2 h-4 w-4" />
-            Habilitar ubicación.
+            Enable location
           </Button>
         </AlertDescription>
       </Alert>
@@ -61,12 +61,12 @@ export function WeatherDashboard() {
     return (
       <Alert>
         <MapPin className="h-4 w-4" />
-        <AlertTitle>Unicacion requerida</AlertTitle>
+        <AlertTitle>Location required</AlertTitle>
         <AlertDescription className="flex flex-col gap-4">
-          <p>Habilite el acceso a la ubicación para ver el clima local.</p>
+          <p>Enable location access to view the local weather</p>
           <Button variant="outline" onClick={getLocation} className="w-fit">
             <MapPin className="mr-2 h-4 w-4" />
-            Habilitar ubicación.
+            Enable location
           </Button>
         </AlertDescription>
       </Alert>
@@ -81,10 +81,10 @@ export function WeatherDashboard() {
         <AlertTriangle className="h-4 w-4" />
         <AlertTitle>Error</AlertTitle>
         <AlertDescription className="flex flex-col gap-4">
-          <p>No se pudieron obtener los datos meteorológicos. Inténtalo de nuevo.</p>
+          <p>Unable to fetch weather data. Please try again.</p>
           <Button variant="outline" onClick={handleRefresh} className="w-fit">
             <RefreshCw className="mr-2 h-4 w-4" />
-            Reintentar
+            Retry
           </Button>
         </AlertDescription>
       </Alert>
@@ -99,7 +99,7 @@ export function WeatherDashboard() {
     <div className="space-y-4">
       <FavoriteCities />
       <div className="flex items-center justify-between">
-        <h1 className="text-xl font-bold tracking-tight">Mi ubicación</h1>
+        <h1 className="text-xl font-bold tracking-tight">My location</h1>
         <Button
           variant="outline"
           size="icon"
