@@ -43,7 +43,7 @@ function FavoriteCityTablet({
     onClick={(e) => {
       e.stopPropagation();
       onRemove(id);
-      toast.error(`Se eliminó ${name} de Favoritos.`);
+      toast.error(`Removed ${name} from favorites.`);
     }}
   >
     <X className="h-4 w-4" />
